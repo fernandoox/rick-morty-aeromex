@@ -1,48 +1,39 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import { getCharacters } from "@/services/characters";
-import { Character } from "@/types/character";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import CharacterCard from "@/components/CharacterCard";
+import SearchInput from "@/components/SearchInput";
+import { fetchCharacters } from "@/store/characters-slice";
+import type { RootState, AppDispatch } from "@/store/store";
+import styles from "./page.module.css";
 
 export default function Home() {
-  const [characters, setCharacters] = useState<Character[]>([]);
-  const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch<AppDispatch>();
+  const { characters, loading, error } = useSelector(
+    (state: RootState) => state.characters
+  );
 
   useEffect(() => {
-    const fetchCharacters = async () => {
-      try {
-        const data = await getCharacters(1);
-        setCharacters(data.results);
-      } catch (error) {
-        console.error("Error fetching characters:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+    dispatch(fetchCharacters({ page: 1 }));
+  }, [dispatch]);
 
-    fetchCharacters();
-  }, []);
-
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className={styles.loading}>Loading...</div>;
+  if (error) return <div className={styles.error}>Error: {error}</div>;
 
   return (
-    <div>
-      <h1>Rick & Morty Characters</h1>
-      <div>
-        {characters.map((character) => (
-          <div key={character.id}>
-            <Image
-              src={character.image}
-              alt={character.name}
-              width={100}
-              height={100}
-            />
-            <h3>{character.name}</h3>
-            <p>Status: {character.status}</p>
-          </div>
-        ))}
-      </div>
+    <div className={styles.container}>
+      <aside className={styles.detail}>
+        <p>datelle del personaje</p>
+      </aside>
+      <main className={styles.gridContainer}>
+        <SearchInput />
+        <div className={styles.grid}>
+          {characters.map((character) => (
+            <CharacterCard key={character.id} character={character} />
+          ))}
+        </div>
+      </main>
     </div>
   );
 }

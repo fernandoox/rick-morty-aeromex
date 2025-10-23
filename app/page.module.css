@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  width: 1023px;
+  height: 720px;
+  margin: 0 auto;
+  background-color: #272727;
+}
+
+.detail {
+  width: 40%;
+  background-color: #272727;
+  padding: 20px;
+  color: #fff;
+}
+
+.gridContainer {
+  flex: 1;
+  height: 720px;
+  padding: 40px;
+  overflow-y: auto;
+  background-color: #272727;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 190px);
+  gap: 50px;
+  align-content: start;
+  justify-content: center;
+}
+
+.loading,
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #24282f;
+  color: #fff;
+  font-size: 20px;
+}
+
+.error {
+  color: #d63d2e;
+}
