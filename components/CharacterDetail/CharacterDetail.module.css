@@ -41,7 +41,7 @@
 }
 
 .statusText {
-  color: #fff;
+  color: var(--color-white);
   font-size: 14px;
 }
 
@@ -61,18 +61,18 @@
 }
 
 .name {
-  color: #76dd00;
+  color: var(--color-green);
   font-size: 20px;
   font-weight: 500;
 }
 
 .species {
-  color: #fff;
+  color: var(--color-white);
   font-size: 16px;
 }
 
 .type {
-  color: #fff;
+  color: var(--color-white);
   font-size: 16px;
 }
 
@@ -92,11 +92,11 @@
 }
 
 .label {
-  color: #76dd00;
+  color: var(--color-green);
   font-size: 18px;
 }
 
 .value {
-  color: #fff;
+  color: var(--color-white);
   font-size: 16px;
 }

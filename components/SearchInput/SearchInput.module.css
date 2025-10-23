@@ -9,25 +9,25 @@
   left: 16px;
   top: 50%;
   transform: translateY(-50%);
-  color: #76dd00;
+  color: var(--color-green);
 }
 
 .input {
   width: 100%;
   padding: 20px 16px 20px 48px;
   background: transparent;
-  border: 1px solid #76dd00;
+  border: 1px solid var(--color-green);
   border-radius: 8px;
-  color: #76dd00;
+  color: var(--color-green);
   font-size: 14px;
   outline: none;
 }
 
 .input::placeholder {
-  color: #76dd00;
+  color: var(--color-green);
   opacity: 0.7;
 }
 
 .input:focus {
-  border-color: #9eff3a;
+  border-color: var(--color-green-light);
 }

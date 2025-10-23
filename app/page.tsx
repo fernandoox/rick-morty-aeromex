@@ -34,7 +34,7 @@ export default function Home() {
           <div className={styles.emptyState}>
             <p className={styles.emptyText}>🛸</p>
             <p className={styles.emptyMessage}>Select a character</p>
-            <p className={styles.emptySubtext}>to view their interdimensional details</p>
+            <p className={styles.emptySubtext}>to view their details</p>
           </div>
         )}
       </aside>

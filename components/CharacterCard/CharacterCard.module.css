@@ -13,7 +13,7 @@
 }
 
 .card.active {
-  border-color: #76dd00;
+  border-color: var(--color-green);
 }
 
 .card:hover {
@@ -23,7 +23,7 @@
 }
 
 .name {
-  color: #fff;
+  color: var(--color-white);
   font-size: 14px;
   font-weight: 400;
   text-align: center;
@@ -52,7 +52,7 @@
   gap: 6px;
   padding: 4px;
   background: transparent;
-  color: #fff;
+  color: var(--color-white);
   font-size: 16px;
   cursor: pointer;
   width: 100%;

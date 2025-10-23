@@ -11,7 +11,7 @@
 .detail {
   width: 48%;
   background-color: #272727;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .gridContainer {
@@ -37,12 +37,12 @@
   align-items: center;
   min-height: 100vh;
   background-color: #24282f;
-  color: #fff;
+  color: var(--color-white);
   font-size: 20px;
 }
 
 .error {
-  color: #d63d2e;
+  color: var(--color-red);
 }
 
 .emptyState {
@@ -71,10 +71,10 @@
 }
 
 .emptyMessage {
-  color: #76dd00;
+  color: var(--color-green);
   font-size: 24px;
   font-weight: 700;
-  margin: 0 0 8px 0;
+  margin: 10px 0px;
 }
 
 .emptySubtext {
