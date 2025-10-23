@@ -25,10 +25,10 @@
 .name {
   color: #fff;
   font-size: 14px;
-  font-weight: 700;
-  margin: 0;
+  font-weight: 400;
   text-align: center;
   padding: 14px;
+  text-transform: uppercase;
 }
 
 .imageContainer {
@@ -45,25 +45,19 @@
   border-radius: 8px;
 }
 
-.likeButton {
+.likeSection {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 14px;
+  gap: 6px;
+  padding: 4px;
   background: transparent;
-  border: none;
   color: #fff;
   font-size: 16px;
-  font-weight: 600;
   cursor: pointer;
   width: 100%;
 }
 
-.likeButton:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.likeButton:hover svg {
+.likeSection:hover svg {
   color: #ff0000;
 }

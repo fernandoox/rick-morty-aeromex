@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CharacterCard from "@/components/CharacterCard";
+import CharacterDetail from "@/components/CharacterDetail";
 import SearchInput from "@/components/SearchInput";
 import { fetchCharacters } from "@/store/characters-slice";
 import type { RootState, AppDispatch } from "@/store/store";
@@ -12,6 +13,9 @@ export default function Home() {
   const dispatch = useDispatch<AppDispatch>();
   const { characters, loading, error } = useSelector(
     (state: RootState) => state.characters
+  );
+  const selectedCharacter = useSelector(
+    (state: RootState) => state.selectedCharacter.character
   );
 
   useEffect(() => {
@@ -24,7 +28,15 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <aside className={styles.detail}>
-        <p>datelle del personaje</p>
+        {selectedCharacter ? (
+          <CharacterDetail character={selectedCharacter} />
+        ) : (
+          <div className={styles.emptyState}>
+            <p className={styles.emptyText}>🛸</p>
+            <p className={styles.emptyMessage}>Select a character</p>
+            <p className={styles.emptySubtext}>to view their interdimensional details</p>
+          </div>
+        )}
       </aside>
       <main className={styles.gridContainer}>
         <SearchInput />

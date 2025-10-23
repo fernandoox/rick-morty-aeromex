@@ -1,6 +1,7 @@
 export interface Character {
   id: number;
   name: string;
+  type: string;
   status: "Alive" | "Dead" | "unknown";
   species: string;
   origin: {
