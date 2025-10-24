@@ -49,15 +49,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
   padding: 4px;
   background: transparent;
   color: var(--color-white);
   font-size: 16px;
-  cursor: pointer;
   width: 100%;
 }
 
-.likeSection:hover svg {
+.likeButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.likeButton:hover svg {
   color: #ff0000;
+}
+
+.likeSection.liked .likeButton svg {
+  color: var(--color-red);
 }

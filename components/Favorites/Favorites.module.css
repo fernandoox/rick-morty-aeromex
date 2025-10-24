@@ -1,0 +1,65 @@
+.container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+  z-index: 1000;
+}
+
+.toggleButton {
+  background: #5b5454;
+  color: var(--color-white);
+  border: none;
+  border-radius: 8px 8px 0 0;
+  padding: 10px 100px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.toggleButton:hover,
+.toggleButton.active {
+  background: #5b5454;
+  color: var(--color-green);
+}
+
+.dropdown {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  background: #5b5454;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  max-height: 350px;
+  overflow-y: auto;
+  z-index: 1001;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.listItem {
+  background: #9c9c9c;
+  padding: 8px 16px;
+  margin: 8px 0;
+  width: 100%;
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.listItem:hover {
+  background: #aaa;
+}

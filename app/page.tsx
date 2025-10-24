@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import CharacterCard from "@/components/CharacterCard";
 import CharacterDetail from "@/components/CharacterDetail";
 import SearchInput from "@/components/SearchInput";
+import Favorites from "@/components/Favorites";
 import { fetchCharacters } from "@/store/characters-slice";
 import type { RootState, AppDispatch } from "@/store/store";
 import styles from "./page.module.css";
@@ -45,6 +46,7 @@ export default function Home() {
             <CharacterCard key={character.id} character={character} />
           ))}
         </div>
+        <Favorites />
       </main>
     </div>
   );

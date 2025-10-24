@@ -15,6 +15,7 @@
 }
 
 .gridContainer {
+  position: relative;
   flex: 1;
   height: 720px;
   padding: 40px;
