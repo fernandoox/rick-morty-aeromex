@@ -8,7 +8,7 @@ import styles from "./SearchInput.module.css";
 export default function SearchInput() {
   const dispatch = useDispatch<AppDispatch>();
   const [searchTerm, setSearchTerm] = useState("");
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
   const handleSearch = (value: string) => {
     setSearchTerm(value);
