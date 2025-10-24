@@ -34,16 +34,23 @@
 .loading,
 .error {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background-color: #24282f;
+  padding: 60px 20px;
   color: var(--color-white);
   font-size: 20px;
+  text-align: center;
 }
 
 .error {
   color: var(--color-red);
+}
+
+.errorSubtext {
+  color: #999;
+  font-size: 16px;
+  margin-top: 10px;
 }
 
 .emptyState {

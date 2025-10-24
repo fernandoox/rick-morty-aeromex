@@ -12,8 +12,8 @@ const initialState: CharactersState = {
 
 export const fetchCharacters = createAsyncThunk(
   "characters/fetchCharacters",
-  async ({ page = 1 }: { page?: number }) => {
-    const response = await getCharacters(page);
+  async ({ page = 1, name }: { page?: number; name?: string }) => {
+    const response = await getCharacters(page, name);
     return response;
   }
 );
