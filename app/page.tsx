@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { IoChevronUp, IoChevronDown } from "react-icons/io5";
 import CharacterCard from "@/components/CharacterCard";
 import CharacterDetail from "@/components/CharacterDetail";
 import SearchInput from "@/components/SearchInput";
@@ -13,6 +14,7 @@ import styles from "./page.module.css";
 export default function Home() {
   const dispatch = useDispatch<AppDispatch>();
   const initialized = useRef(false);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const { characters, loading, error } = useSelector(
     (state: RootState) => state.characters
   );
@@ -26,6 +28,18 @@ export default function Home() {
       dispatch(fetchCharacters({ page: 1 }));
     }
   }, [dispatch]);
+
+  const handleScrollUp = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ top: -200, behavior: "smooth" });
+    }
+  };
+
+  const handleScrollDown = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ top: 200, behavior: "smooth" });
+    }
+  };
 
   const renderCharactersContent = () => {
     if (loading) {
@@ -72,11 +86,27 @@ export default function Home() {
           </div>
         )}
       </aside>
-      <main className={styles.gridContainer}>
-        <SearchInput />
-        {renderCharactersContent()}
+      <div className={styles.mainWrapper}>
+        <main className={styles.gridContainer} ref={scrollContainerRef}>
+          <SearchInput />
+          {renderCharactersContent()}
+        </main>
         <Favorites />
-      </main>
+        <button
+          className={styles.scrollButtonUp}
+          onClick={handleScrollUp}
+          aria-label="Scroll up"
+        >
+          <IoChevronUp size={24} />
+        </button>
+        <button
+          className={styles.scrollButtonDown}
+          onClick={handleScrollDown}
+          aria-label="Scroll down"
+        >
+          <IoChevronDown size={24} />
+        </button>
+      </div>
     </div>
   );
 }
