@@ -38,9 +38,29 @@ npm run dev
 
 ### Pruebas unitarias
 
-.... pendiente
+Ejecutar todas las pruebas:
 
+```bash
+npm test
 ```
+
+Ejecutar pruebas en modo watch:
+
+```bash
+npm run test:watch
+```
+
+Ejecutar pruebas con cobertura:
+
+```bash
+npm run test:coverage
+```
+
+**Pruebas incluidas:**
+
+- Redux slices (favorites-slice)
+- Servicios (characters service)
+- Componentes (SearchInput)
 
 ## ¿Qué es lo que más te gustó de TU desarrollo?
 
@@ -63,4 +83,3 @@ Problema: cuando implementé la busqueda o filtro de personajes, se hacian multi
 1. Implementé un debounce para retrasar la búsqueda hasta que el usuario deje de escribir
 
 # Gracias :)
-```
